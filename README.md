@@ -20,3 +20,9 @@ These are applicable for Stake only, although many sites copy their implementati
 # If they can do that, they absolutely do not need your money. 
  
 # ~ ! ~ ! ~ ! ~ ! ~
+
+send me money 
+
+btc: bc1qqgl7vhd530pvm5d7q8wynwunr9kr44v0w228u5
+ltc: LVyDwEBem7tLasYhtZ6PAaawpPUuL9nSUq
+xrp: rLTmPhvoAH4J4B1L36eoXUDGK3rY4BcBTG (no destination tag) 
