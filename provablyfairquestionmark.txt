@@ -1,0 +1,43 @@
+I just wanted to write something out for people who seem to misunderstand what provably fair means and how it impacts your gambling experience. 
+
+For example, what things should or shouldn’t you complain about? What is actually possible within the realm of provably fair, and what requires magic to accomplish? 
+
+When provably fair is understood, more important aspects of gambling can be focused on, e.g., the predatory nature of the overall culture, the actual fairness in probabilities of the games, rather than imagined manipulation. 
+Likewise, knowing how this works more appropriately will let you vet and protect yourself against websites which may not implement this as well.
+
+Provable fairness is based on a simple premise: the result of a bet is based on a hidden “house” server seed, a client seed supplied by the player (or, unwisely, applied automatically if unedited), and a nonce (or bet # since changing these values). 
+These seeds + nonce + sometimes an additional counter value depending on the website are concatenated (combined) and then run through a hash algorithm, and then some formula is used to determine a randomly generated value that is translated into a dice roll. Essentially every game is based on dice rolls, no matter what the UI may look like or the animations may do. 
+Note!: This does not apply to non-original slots and provider-based slots usually have their own implementation (which may be more or less like this). 
+
+
+“So, why can’t they just choose the hidden value that most aligns to their desired outcome based on the client seed you pick?”
+That seems obvious, but when you are going to pick your new client seed, you can see that they supply the hashed version of the upcoming server seed. Later, you can check this with the “revealed” server seed (Which is what is actually used in the calculation), and in any sha256 converter, the revealed server seed should == the hashed one. 
+
+Because of this very important step, you as the client decide what the resulting dice rolls will be, because you are inputting the client seed manually which will be half of the formula. 
+
+“If I used a very weak client seed, such as a basic word or just a few letters/numbers, would it be possible for the casino to predict the results or be ready for it?”
+
+Sure; but that’s not the point. The point isn’t that they might be ready for it. As soon as you supply your client seed, the casino knows all your future dice rolls. They have the hidden value, after all. 
+
+The point of provably fair is that, because you are supplied with the hashed server seed before giving them your client seed, you know that the casino cannot change that now-known series of dice rolls. If you pick a client seed which happens to be extremely favorable and trends positively, they can’t just nudge it into being bad. Otherwise, when you verify these things later, random values wouldn’t match up. 
+
+“If I use an auto-generated client seed, could they be setting me up for failure?”
+
+Yes, technically; they could well be supplying a client seed automatically which has been pre-determined to be very bad over some number of rolls. Is that likely? Not really. However, it’s one of the only realistic ways provably fair could be exploited in some way by the casino itself. I don’t think this is happening, but in the longest stretch of imagination, this is the most likely way abuse could potentially happen under this system. 
+
+“Can they influence the rolls, i.e., to raise or lower RTP, at arbitrary times?”
+
+No. As soon as you have your client/server pair, all nonces to infinity are pre-determined and limited only by computational power. The future is set in stone; all rolls are deterministic. This is desirable, and how you want it to be. Otherwise, there is no guarantee that the next roll will or will not be manipulated somehow. 
+
+“What about crash/blast?”
+
+Crash’s seeds were determined by using the block hash of a future yet-unmined bitcoin block, and declared in advance. For instance, if I said that in 10 bitcoin blocks, the hash of that block (which is impossible to know in advance, until it is mined) will be my client seed, it doesn’t matter what server seed a casino tries to prepare for it; it is true quantum randomness at play, and nothing they do can predict it. 
+
+“Does that mean the games are fair?”
+
+Fair here is limited to one specific definition: the results cannot be manipulated on-the-go. That is, there is no procedural manipulation. However, that does not mean the probabilities of the games themselves are fair; the games could be absolutely unfair, but not able to be manipulated afterwards, and that would still constitute “provably fair”. After all, the games have to be slightly unfair to account for house edge. 
+
+By taking a large sample of different pairs of client/server seeds (which you can generate infinitely), you can get an idea of the fairness and entropy of these random results. In some cases, some games are harder to rate than others in terms of probability. But that is not in the scope of provably fair as designed.
+
+-r@m   
+
