@@ -9,6 +9,10 @@ misc folder: A few random scripts, one clicker for cashing out on crash (with so
 
 These are applicable for Stake only, although many sites copy their implementation 1:1 and it may well work for those sites too. However, some sites (especially older ones) already had their own implementations. Bitsler is the only one I have specifically written other scripts for.
 
+Issues: Possibly some of them may not work well when there are non-alphanumeric characters in the client seed because I need to adjust the input field to be literal. Dice works fine.
+
+For Plinko, you will probably need an excel sheet or google sheet and index the results 0-row count to more easily look. If you look at the bottom of a plinko board, 0 is the leftmost, and 16 is the rightmost, (or whatever rows it is, 0-8, whatever). So 0 and 16 are 1000x.
+
 ~ ruby@midnight
 
 # ~ ! ~ ! ~ ! ~ ! ~
